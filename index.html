@@ -14,6 +14,9 @@ developer, HTML">
 </head>
 <body>
  <header>
+    <canvas id="logo" width="120" height="120">
+    AWACH AWACH logo
+    </canvas>
     <h1>Hello, I am AWACH AWACH</h1>
     <img src="images/profile.jpg" alt="Portrait of AWACH AWACH "
 title="AWACH AWACH" width="200" height="200">
@@ -148,6 +151,12 @@ optimum="1">20%</meter>
 <label for="lvl-java">Java</label>
 <meter id="lvl-java" value="0.65" min="0" max="1">65%</meter>
 </p>
+         
+         <h3>My Skill Chart</h3>
+
+<canvas id="skillChart" width="300" height="150">
+    A chart showing my programming skills.
+</canvas>
       </section>
 
     <section id="projects">
@@ -392,5 +401,53 @@ optimum="1">20%</meter>
     <time datetime="2026-11-05">5 November 2026</time>
 </p>
 </footer>
+
+<script>
+    const canvas = document.getElementById('logo');
+    const ctx = canvas.getContext('2d');
+
+    // 1. Draw the blue square background
+    ctx.fillStyle = "#1f5fa8";
+    ctx.fillRect(0, 0, 120, 120);
+
+    // 2. Draw the white circle
+    ctx.beginPath();
+    ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    // 3. Draw your initials
+    ctx.fillStyle = "#1f5fa8";
+    ctx.font = "bold 36px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("AG", 60, 62);
+
+
+    // Skill bar chart
+const chart = document.getElementById('skillChart');
+const chartCtx = chart.getContext('2d');
+
+// HTML: 80%
+chartCtx.fillStyle = "#1f5fa8";
+chartCtx.fillRect(25, 34, 40, 96);
+chartCtx.fillText("HTML", 45, 145);
+
+// Python: 70%
+chartCtx.fillStyle = "#2e8b57";
+chartCtx.fillRect(90, 46, 40, 84);
+chartCtx.fillText("Python", 110, 145);
+
+// JavaScript: 20%
+chartCtx.fillStyle = "#d97706";
+chartCtx.fillRect(155, 106, 40, 24);
+chartCtx.fillText("JavaScript", 175, 145);
+
+// Java: 65%
+chartCtx.fillStyle = "#7c3aed";
+chartCtx.fillRect(220, 52, 40, 78);
+chartCtx.fillText("Java", 240, 145);
+
+</script>
 </body>
 </html>
